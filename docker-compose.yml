@@ -3,6 +3,7 @@ services:
   db:
     container_name: postgis_container
     build: ./postgis-osm
+    platform: linux/amd64
     environment:
       POSTGRES_DB: postgre
       POSTGRES_USER: postgres
@@ -29,3 +30,6 @@ services:
     - ./work/ex2:/work/ex2
     - ./work/python:/work/python
     tty: true
+    depends_on:
+      - db
+    
