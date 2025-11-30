@@ -1,11 +1,12 @@
+
 FROM python:3.8-slim-buster
+FROM python:3.11-slim-bookworm
 USER root
 
 RUN apt-get update && \
     apt-get -y install \
             python3-distutils \
             python3-dev \
-            python-pip \
             python3-pip \
             gcc \
             g++ \
@@ -31,3 +32,5 @@ COPY ./python/requirements.txt .
 RUN pip3 install -r requirements.txt
 
 WORKDIR /work
+WORKDIR /work
+
